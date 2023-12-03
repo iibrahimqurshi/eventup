@@ -1,3 +1,8 @@
+
+/* 1.1 - Template Fonts - Start
+================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 .App-header {
  background-color: #282c34;
  min-height: 100vh;
@@ -49,107 +54,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@charset "UTF-8";
-/* Table Of Content - start
-================================================== */
-/*
-* Project Name   :  Collab – Online Learning Platform Template
-* File           :  CSS Base
-* Version        :  1.0.0
-* Last change    :  15 April 2023, Saturday
-* Author         :  Merkulove (https://themeforest.net/user/merkulove)
-* Developer			 :	webrok (https://www.fiverr.com/webrok?up_rollout=true)
-
-==================================================
-
-1 - Template Global Settings
-	1.1 - Template Fonts
-	1.2 - Template Global Reset
-
-2 - Template Elements
-	2.1 - Template Colors
-	2.2 - CSS Animation
-	2.3 - Back to Top Button
-	2.4 - Decorations Images & Shapes
-	2.5 - Spaces or Gaps
-	2.6 - Button
-	2.7 - Order & Unorder List
-	2.8 - Typography
-	2.9 - Carousel or Slider
-	2.10 - Image
-	2.11 - Video
-	2.12 - Form
-	2.13 - Calendar
-	2.14 - Tab
-	2.15 - Social Icons
-	2.16 - Counter
-	2.17 - Rating Star
-	2.18 - Iconbox
-	2.19 - Accordion
-	2.20 - Pagination
-	2.21 - Countdown
-	2.22 - Comment
-
-3 - Template Components
-	3.1 - Banner
-	3.2 - Service
-
-	3.4 - Event
-	3.5 - Pricing
-	3.6 - Advertisement
-	3.7 - Testimonial
-	3.8 - Newsletter
-	3.9 - Blog
-	3.10 - Call To Action
-	3.11 - Brands
-	3.12 - Mentor
-
-4 - Template Parts
-	4.1 - Site Header
-	4.2 - Site Footer
-	4.3 - Breadcrumb
-	4.4 - Sidebar
-
-5 - Template Pages
-	5.1 - Details Pages
-	5.2 - Contact Page
-	5.3 - 404 Page
-	5.4 - Register Pages
-
-*/
-/* Table Of Content - end
-================================================== */
-/* 1.1 - Template Fonts - Start
-================================================== */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 /* 1.1 - Template Fonts - End
 ================================================== */
 /* 1.2 - Template Global Reset - Start

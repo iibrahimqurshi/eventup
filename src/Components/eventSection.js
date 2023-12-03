@@ -72,6 +72,7 @@ const EventSection = () => {
               </button>
             </li>
           </ul>
+          
           <EventCard/>
 
           

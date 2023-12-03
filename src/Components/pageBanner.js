@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // Only if using React Router
 import bannerImage from '../assets/images/banner/page_banner_image.png'; // Adjust the path as needed
 
-function PageBanner({$pageTitle},{$pageDescription}) {
+function PageBanner({pageTitle},{Des}) {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSubmit = (e) => {
@@ -23,13 +23,12 @@ function PageBanner({$pageTitle},{$pageDescription}) {
             <div className="col col-lg-6">
               <ul className="breadcrumb_nav unordered_list">
                 <li><Link to="/">Home</Link></li> 
-                <li>{$pageTitle}</li>
+                <li>{pageTitle}</li>
               </ul>
-              <h1 className="page_title">{$pageTitle}</h1>
+              <h1 className="page_title">{pageTitle}</h1>
               <p className="page_description">
-              {$pageDescription} he
+               {Des} 
               </p>
-              
             </div>
           </div>
         </div>
@@ -37,5 +36,8 @@ function PageBanner({$pageTitle},{$pageDescription}) {
     </section>
   );
 }
+
+
+
 
 export default PageBanner;

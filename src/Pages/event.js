@@ -15,17 +15,21 @@ import "../css/animate.css"
 import "../css/fontawesome.css"
 import "../App.css"
 
+const title = "Events"
+let Description = "enjoy\sour\samazing\sevents"
 
 const Event = () => {
 	return (
 		<div className="page_wrapper">
 			<Header/>
-			<PageBanner/>
+			<PageBanner pageTitle={title} pageDescription={Description}/>
 			<EventSection/>
 			<Newsletter/>
 			<Footer/>
 		</div>
 	);
 };
+
+
 
 export default Event;
