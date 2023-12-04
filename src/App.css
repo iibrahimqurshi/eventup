@@ -1,4 +1,11 @@
 
+
+
+
+
+
+
+
 /* 1.1 - Template Fonts - Start
 ================================================== */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
@@ -163,6 +170,7 @@ hr {
   max-width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
+  
 }
 
 .row {
@@ -1669,6 +1677,7 @@ ol[type="1"] > li:not(:last-child) {
   padding: 100px;
   background-color: #1F1D0D;
   border-radius: 8px;
+  margin-top: -70px;
 }
 .hero_banner.style_1 .banner_description {
   padding-right: 190px;
@@ -2878,6 +2887,8 @@ ol[type="1"] > li:not(:last-child) {
   max-width: 1200px;
 }
 
+
+
 /* 4.1 - Site Header - End
 ================================================== */
 /* 4.2 - Site Footer - Start
@@ -2888,6 +2899,7 @@ ol[type="1"] > li:not(:last-child) {
 }
 .site_footer .site_logo {
   margin-bottom: 35px;
+  
 }
 .site_footer .footer_widget_area {
   padding: 130px 0 108px;
@@ -2967,6 +2979,7 @@ ol[type="1"] > li:not(:last-child) {
   padding: 15px;
 }
 .page_banner .item_price {
+  font-size: 30px;
   line-height: 1;
   font-family: "Barlow", sans-serif;
 }
@@ -4278,6 +4291,7 @@ ol[type="1"] > li:not(:last-child) {
   }
   .page_banner .item_price .sale_price {
     font-size: 38px;
+    
   }
   .page_banner .item_price .remove_price {
     font-size: 20px;

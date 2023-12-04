@@ -20,7 +20,7 @@ const HeroBanner = () => {
             <div className="row">
               <div className="col col-lg-7">
                 <h1 className="banner_small_title">New Horizons</h1>
-                <h2 className="banner_big_title">Explore Events in Your City</h2>
+                <h2 className="banner_big_title">Explore Events in <br></br>Your City</h2>
                 <p className="banner_description">
                   Discover a world of events at your fingertips! From exhilarating social gatherings to informative
                   workshops and vibrant festivals, find your next unforgettable experience. Whether you're a local or
@@ -41,14 +41,14 @@ const HeroBanner = () => {
               <div className="col col-lg-5">
                 <div className="banner_image_1 decoration_wrap">
                   <div className="image_wrap">
-                    <img src={bannerImage} alt="Collab – Online Learning Platform" />
+                    <img src={bannerImage} alt="eventup" />
                   </div>
   
                   <div className="deco_item shape_img_1">
-                    <img src={shapeImg1} alt="Collab – Online Learning Platform" />
+                    <img src={shapeImg1} alt="eventup" />
                   </div>
                   <div className="deco_item shape_img_2">
-                    <img src={shapeImg2} alt="Collab – Online Learning Platform" />
+                    <img src={shapeImg2} alt="eventup" />
                   </div>
                 </div>
               </div>

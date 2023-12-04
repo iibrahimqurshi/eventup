@@ -6,7 +6,7 @@ import "../css/style.css"
 import "../css/animate.css"
 import "../css/fontawesome.css"
 import "../App.css"
-
+import logo from "../assets/images/site_logo.png"
 
 
 const Header = () => {
@@ -19,7 +19,7 @@ const Header = () => {
           <div className="col col-lg-3 col-5">
             <div className="site_logo">
               <Link className="site_link" to="/">
-                
+              <img src={logo} alt="Eventup" />
               </Link>
             </div>
           </div>

@@ -11,12 +11,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./css/style.css"
 import "./css/animate.css"
 import "./css/fontawesome.css"
+import AddEventModal from './Pages/addEvent.js'
 function App() {
   return (
     <>
 			<Router>
 				<Routes>
 					<Route exact path='/' element={<HomePage/>} />
+					<Route exact path='/addEvent' element={<AddEventModal/>} />
 					<Route exact path='/events' element={<Event/>} />
 					<Route exact path='/login' element={<LoginPage/>} />
 					<Route exact path='/signup' element={<SignupPage />} />
