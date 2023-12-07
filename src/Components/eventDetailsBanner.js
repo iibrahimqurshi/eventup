@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import only if using React Router
 
-function EventDetailsBanner() {
+function EventDetailsBanner({event}) {
   // You can also manage dynamic data passed into this component via props or context if needed
   return (
     <section className="page_banner">
@@ -11,11 +11,11 @@ function EventDetailsBanner() {
             <div className="col col-lg-7">
               <ul className="breadcrumb_nav unordered_list">
                 <li><Link to="/">Home</Link></li> {/* Replace with <a href="index.html"> if not using React Router */}
-                <li><Link to="/event">Canvas & Cocktails</Link></li> {/* Replace with <a href="event.html"> if not using React Router */}
+                <li><Link to="/event">{event.title}</Link></li> {/* Replace with <a href="event.html"> if not using React Router */}
                 <li>Event Details</li>
               </ul>
               <h1 className="page_title">
-              ARTS & THEATRE
+              {event.category}
               </h1>
               <ul className="info_list unordered_list_block pb-0">
                 <li>

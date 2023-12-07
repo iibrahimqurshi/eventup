@@ -1,4 +1,6 @@
 <?php
+// rest_password.php
+
 header('Access-Control-Allow-Origin: *'); 
 header('Content-Type: application/json');
 header('Access-Control-Allow-Methods: POST');
@@ -17,30 +19,21 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-
-
-
-
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = json_decode(file_get_contents("php://input"), true);
-
     $email = $data['email'];
-    $password = $data['password'];
+    $newPassword = $data['newPassword'];
 
-    // TODO: Validate email and password (e.g., check format, length)
+    // Hash the new password
+    $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
 
-    // Hash the password
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-    // Insert the new user into the database
-    $stmt = $conn->prepare("INSERT INTO users (email, password) VALUES (?, ?)");
-    $stmt->bind_param("ss", $email, $hashedPassword);
-
+    // Update the user's password in the database
+    $stmt = $conn->prepare("UPDATE users SET password = ? WHERE email = ?");
+    $stmt->bind_param("ss", $hashedPassword, $email);
     if ($stmt->execute()) {
-        echo json_encode(["success" => true, "message" => "User registered successfully"]);
+        echo json_encode(["success" => true, "message" => "Password reset successfully"]);
     } else {
-        echo json_encode(["success" => false, "message" => "Error: " . $stmt->error]);
+        echo json_encode(["success" => false, "message" => "Error updating password"]);
     }
 
     $stmt->close();

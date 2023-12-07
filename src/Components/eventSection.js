@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState , useEffect}from "react";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom for internal navigation
 import "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -6,10 +6,27 @@ import "../css/style.css";
 import "../css/animate.css";
 import "../css/fontawesome.css";
 import "../App.css";
-
-import eventImage from "../assets/images/event/event_details_image_1.jpg"; // Adjust path as needed
+import axios from "axios";
+import eventImage from "../assets/images/event/event_details_image_1.png"; // Adjust path as needed
 
 const EventSection = () => {
+
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    // Fetch the events data when the component mounts
+    axios.get('http://localhost/eventup/src/php/get_events.php')
+      .then(response => {
+        if(response.data.success) {
+          setEvents(response.data.events);
+        } else {
+          console.error('Failed to fetch events:', response.data.message);
+        }
+      })
+      .catch(error => console.error('Error fetching events:', error));
+  }, []);
+
+
   return (
     <section className="events_section section_space_lg">
       <div className="container">
@@ -131,85 +148,81 @@ const EventSection = () => {
             </li>
           </ul>
 
-          <EventCard />
+          <EventCard events={events}/>
         </div>
       </div>
     </section>
   );
 };
 
-function EventCard() {
+function EventCard({events}) {
+  
   return (
+    
     <div className="tab-content">
       <div className="tab-pane fade show active" id="teb_all" role="tabpanel">
         <div className="row">
-          <div className="col col-lg-4">
+
+          {events.map(event => (
+          <div key={event.ID} className="col col-lg-4">
             <div className="event_card">
               <div className="item_image">
-                <Link to="/event-details">
+                <Link to={`/event_details:${event.ID}`}>
                   {" "}
                   {/* Replace with <a href="..."> if not using React Router */}
-                  <img src={eventImage} alt="Eventup" />
+                  <img src={eventImage}  alt="Eventup" />
                 </Link>
               </div>
               <div className="item_content">
                 <div className="d-flex align-items-center justify-content-between mb-3">
                   <ul className="item_category_list unordered_list">
                     <li>
-                      <Link to="#">ARTS & THEATRE</Link>
+                      <Link to="#">{event.category}</Link>
                     </li>{" "}
                     {/* Replace with <a href="..."> if not using React Router */}
                   </ul>
                   <div className="item_price">
-                    <span className="sale_price">150 SAR</span>
+                    <span className="sale_price">{event.price} SAR</span>
                   </div>
                 </div>
                 <ul className="meta_info_list unordered_list">
                   <li>
                     <i class="fas fa-user"></i>
-                    <span>Ibrahim alqurshi</span>
+                    <span>{event.organizer}</span>
                   </li>
                   <li>
                     <i class="fas fa-users"></i>
-                    <span> 40 Spaces</span>
+                    <span> {event.spaces}</span>
                   </li>
                   <li>
                     <i class="fas fa-clock"></i>
-                    <span>8:00pm - 11:00pm</span>
+                    <span>{event.start_time} - {event.end_time}</span>
                   </li>
                   <li>
                     <i class="fas fa-calendar"></i>
-                    <span>12/29/2023</span>
+                    <span>{event.date}</span>
                   </li>
                   <li>
                     <i class="fas fa-location"></i>
-                    <span>7057 Cornishe, Hilton</span>
+                    <span><a href={event.location} style={{color:"#F7FF62",textDecoration:"underline"}}> location </a></span>
                   </li>
                   <li>
                     <i class="fas fa-city"></i>
-                    <span>Jeddah</span>
+                    <span>{event.city}</span>
                   </li>
                 </ul>
 
                 <h3 className="item_title">
-                  <Link to="/event_details">Canvas & Cocktails</Link>{" "}
+                  <Link to={`/event_details:${event.ID}`}>{event.title}</Link>{" "}
                   {/* Replace with <a href="..."> if not using React Router */}
-                  <p className="small">
-                    Unwind and create art in a relaxed, social setting.
-                  </p>
+                  
                 </h3>
-                <h3 className="details_info_title hidden">Event Description</h3>
+                <h3 className="item_title">Event Description</h3>
                 <p className="hidden">
-                  Sagittis id consectetur purus ut faucibus pulvinar elementum
-                  integer. Sapien pellentesque habitant morbi tristique senectus
-                  et netus. Gravida in fermentum et sollicitudin ac orci
-                  phasellus egestas. Vulputate sapien nec sagittis aliquam
-                  malesuada bibendum arcu vitae. Massa sed elementum tempus
-                  egestas sed. Sed id semper risus in hendrerit gravida rutrum
-                  quisque
+                  {event.description}
                 </p>
 
-                <Link className="btn_unfill" to="/event_details">
+                <Link className="btn_unfill" to={`/event_details:${event.ID}`}>
                   {" "}
                   {/* Replace with <a href="..."> if not using React Router */}
                   <span className="btn_text">View Event</span>
@@ -221,6 +234,7 @@ function EventCard() {
               </div>
             </div>
           </div>
+           ))}
         </div>
       </div>
     </div>

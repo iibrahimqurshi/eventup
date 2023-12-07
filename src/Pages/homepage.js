@@ -19,6 +19,7 @@ const HomePage = () => {
 	return (
 		<div className="page_wrapper">
 			<Header/>
+			<div className="section_space_lg m-5"> </div>
 			<HeroBanner/>
 			<ExpectFromUs/>
 			<Counter/>

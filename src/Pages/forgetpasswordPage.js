@@ -1,12 +1,6 @@
 import Header from "../Components/header";
-import HeroBanner from "../Components/heroBanner";
-import ExpectFromUs from "../Components/expectFromUs";
-import Counter from "../Components/counter";
-import EventSection from "../Components/eventSection"
-import AdsBanner from "../Components/adBanner"
-import Newsletter from "../Components/newsletter"
 import Footer from "../Components/footer"
-import SignupSection from "../Components/signupSection"
+import ForgetPasswordSection from "../Components/forgetPasswordSection"
 import "react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../css/style.css"
@@ -15,20 +9,17 @@ import "../css/fontawesome.css"
 import "../App.css"
 
 
-const SignupPage = () => {
+const ForgetPasswordPage = () => {
 	return (
 		<div className="page_wrapper">
 			<Header/>
 			<div className="section_space_lg m-5"> </div>
 			<main class="page_content">
-            <SignupSection/>
+                <ForgetPasswordSection/>
             </main>
 			<Footer/>
-
-
-
 		</div>
 	);
 };
 
-export default SignupPage;
+export default ForgetPasswordPage;

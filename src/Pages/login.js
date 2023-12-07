@@ -19,6 +19,7 @@ const LoginPage = () => {
 	return (
 		<div className="page_wrapper">
 			<Header/>
+			<div className="section_space_lg m-5"> </div>
 			<main class="page_content">
                 <LoginSection/>
             </main>

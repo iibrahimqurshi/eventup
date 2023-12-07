@@ -1,23 +1,44 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import only if using React Router
+import React, { useState ,useContext} from 'react';
+import { Link,useNavigate } from 'react-router-dom'; // Import only if using React Router
 import "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/style.css";
 import "../css/animate.css";
 import "../css/fontawesome.css";
 import "../App.css";
+import axios from "axios";
+import { AuthContext } from './AuthContext';
+
 
 
 
 function LoginSection() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [rememberMe, setRememberMe] = useState(false);
+  const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Implement login functionality here
-    console.log('Login with:', { email, password, rememberMe });
+    
+    try {
+      const response = await axios.post('http://localhost/eventup/src/php/login.php', {
+        email,
+        password
+      });
+      console.log(response.data);
+      if (response.data.success) {
+        login(); // Update authentication state
+        alert("You have successfully logged in , you will be directed to the homepage")
+       navigate('/')
+      } else {
+        alert("Your log in has been failed , Try Again")
+        navigate('/login')
+      }
+    } catch (error) {
+      console.error('Login failed:', error);
+      // Handle error
+    }
   };
 
   return (
@@ -51,19 +72,8 @@ function LoginSection() {
                 </div>
                 <div className="remenber_forget row mb-3 align-items-center justify-content-between">
                   <div className="col col-6">
-                    <div className="checkbox_item mb-0">
-                      <input
-                        id="checkbox_remenber"
-                        type="checkbox"
-                        checked={rememberMe}
-                        onChange={(e) => setRememberMe(e.target.checked)}
-                      />
-                      <label htmlFor="checkbox_remenber">Remember me</label>
-                    </div>
-                  </div>
-                  <div className="col col-6">
                     <div className="forget_password text-end">
-                      <Link to="/forget-password">Forget Password</Link> {/* Replace with <a href="#!"> if not using React Router */}
+                      <Link to="/forget_password">Forget Password</Link> 
                     </div>
                   </div>
                 </div>
@@ -74,7 +84,7 @@ function LoginSection() {
                   </span>
                 </button>
                 <p className="mb-0 text-center">
-                  don't have an account? <Link to="/signup">Register Here</Link> {/* Replace with <a href="signup.html"> if not using React Router */}
+                  don't have an account? <Link to="/signup">Register Here</Link> 
                 </p>
               </div>
             </form>

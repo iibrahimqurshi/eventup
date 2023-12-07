@@ -19,6 +19,7 @@ if ($conn->connect_error) {
 }
 
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // Get JSON POST data
 $json = file_get_contents('php://input');
@@ -45,6 +46,8 @@ $conn->close();
 }
 
 
-
+}else{
+    echo json_encode(["success" => false, "message" => "Invalid request method"]);
+}
 
 ?>

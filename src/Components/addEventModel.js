@@ -16,18 +16,17 @@ function AddEventModal() {
 
   // event data
   const [eventData, setEventData] = useState({
-    title: '',
-    description: '',
-    image: '',
-    category: '',
-    price: '',
-    organizer: '',
-    start_time: '',
-    end_time: '',
-    date: '',
-    location: '',
-    city: '',
-    spaces: '',
+    title: "",
+    category: "",
+    price: 0,
+    description: "",
+    organizer: "",
+    start_time: "",
+    end_time: "",
+    date: "",
+    location: "",
+    city: "",
+    spaces: 0,
     
   });
 
@@ -41,52 +40,57 @@ function AddEventModal() {
 
 ////////////////////////////////////////////////////////////////////////////////////
   // handle file/image changes
-  const handleImageChange = (e) => {
-    // Set the file to be uploaded
-    setImageFile(e.target.files[0]);
-  };
+  // const handleImageChange = (e) => {
+  //   // Set the file to be uploaded
+  //   setImageFile(e.target.files[0]);
+  // };
 
-  const handleImageUpload = async () => {
-    const formData = new FormData();
-    formData.append('image', imageFile); // Key 'image' is used by the PHP script
+  // const handleImageUpload = async () => {
+  //   const formData = new FormData();
+  //   formData.append('image', imageFile); // Key 'image' is used by the PHP script
 
-    try {
-      const response = await axios.post('http://localhost/eventup/src/php/uploadImage.php', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
-      // Assuming the PHP script returns the image path in the response
-      return response.data.path;
-    } catch (error) {
-      console.error('Error uploading image:', error);
-    }
-  };
+  //   try {
+  //     const response = await axios.post('http://localhost/eventup/src/php/uploadImage.php', formData, {
+  //       headers: {
+  //         'Content-Type': 'multipart/form-data',
+  //       },
+  //     });
+  //     // Assuming the PHP script returns the image path in the response
+  //     return response.data.path;
+  //   } catch (error) {
+  //     console.error('Error uploading image:', error);
+  //   }
+  // };
   //////////////////////////////////////////////////////////////////////////////
 
 
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate(); 
+
+  
 // submit all data with handling
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (imageFile) {
-      const imagePath = await handleImageUpload();
-      setEventData({ ...eventData, image: imagePath }); // Update eventData with the image path
-    }
+    // if (imageFile) {
+    //   const imagePath = await handleImageUpload();
+    //   setEventData({ ...eventData, image: imagePath }); // Update eventData with the image path
+    // }
 
     ///////////////////////////
     if(eventData.title.length === 0){
       alert("Please Enter title");
      }
      else if(eventData.organizer.length === 0){
-      alert("Please enter your email address");
+      alert("Please enter Orgnaizer name");
      }
      else if(eventData.price === 0){
       alert("Please enter a vaild price");
      }
-     else if(eventData.category === "Category"){
+     else if(eventData.category === "Category" ){
       alert("Please choose a Category");
      }
-     else if(eventData.description.length === 0 && eventData.description.length > 3000){
+     else if(eventData.description.length === 0 && eventData.description.length < 3000){
       alert("Please write a description for your Event , the description should consist of less than 3000 letters ");
      }else if(eventData.date === '' ){
       alert("Please choose a Date");
@@ -209,6 +213,7 @@ function AddEventModal() {
                       id="input_category"
                       value={eventData.category}
                       onChange={handleChange}
+                      
                     >
                       <option value="Category">Choose a Category</option>
                       <option value="ARTS & THEATRE">ARTS & THEATRE</option>
@@ -278,7 +283,7 @@ function AddEventModal() {
                 <div className="col col-md-6">
                   <div className="form_item m-0">
                     <label htmlFor="input_end_time" className="input_title">
-                      Phone
+                      End Time
                     </label>
                     <input
                       id="input_end_time"
@@ -349,7 +354,7 @@ function AddEventModal() {
 
                 {/* Add upload image button that stores the image in the server and post it url to database */}
 
-                 {/* upload image 660X330*/} 
+                 {/* upload image 660X330 
                  <div className="col col-md-6">
                   <div className="form_item m-0">
                     <label htmlFor="input_upload" className="input_title">
@@ -360,10 +365,10 @@ function AddEventModal() {
                       type="file"
                       name="image"
                       value={eventData.image}
-                      onChange={handleChange}
+                      onChange={handleImageChange}
                     />
                   </div>
-                </div>
+                </div> */}
 
                 {/* add submit button  */}
                 <div className="col"> 

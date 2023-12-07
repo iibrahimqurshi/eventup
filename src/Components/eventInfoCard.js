@@ -1,14 +1,17 @@
-import React from "react";
+import React , {useState,useEffect}from "react";
 import { Link } from "react-router-dom"; // Import only if using React Router
-import eventImage from "../assets/images/event/event_details_image_1.jpg"; // Ensure the path is correct
+import eventImage from "../assets/images/event/event_details_image_1.jpg"; 
 import "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/style.css";
 import "../css/animate.css";
 import "../css/fontawesome.css";
 import "../App.css";
-function EventInfoCard() {
-  // You can also make this component dynamic by passing data via props
+function EventInfoCard({event}) {
+
+ 
+
+
 
   return (
     <section className="details_section event_details_section">
@@ -32,7 +35,7 @@ function EventInfoCard() {
             <aside className="sidebar d-none d-lg-block">
               <div className="event_info_card">
                 <div className="details_image">
-                  <img src={eventImage} alt="Collab – Online Learning Platform" />
+                  <img src={eventImage} alt="Eventup" />
                 </div>
                 <div className="item_price">
                     <span className="sale_price">150 SAR</span>
@@ -75,6 +78,7 @@ function EventInfoCard() {
           </div>
         </div>
       </div>
+      
     </section>
   )
 };

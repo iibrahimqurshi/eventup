@@ -6,10 +6,10 @@ import "../css/style.css"
 import "../css/animate.css"
 import "../css/fontawesome.css"
 import "../App.css"
-import adImage1 from '../assets/images/advertisement/advertisement_img_1.jpg';
-import adImage2 from '../assets/images/advertisement/advertisement_img_2.jpg';
-import adImage3 from '../assets/images/advertisement/advertisement_img_3.jpg';
-import adImage4 from '../assets/images/advertisement/advertisement_img_4.jpg';
+import adImage1 from '../assets/images/advertisement/advertisement_img_1.png';
+import adImage2 from '../assets/images/advertisement/advertisement_img_2.png';
+import adImage3 from '../assets/images/advertisement/advertisement_img_3.png';
+import adImage4 from '../assets/images/advertisement/advertisement_img_4.png';
 import shapeImg1 from '../assets/images/shape/shape_img_3.png';
 import shapeImg2 from '../assets/images/shape/shape_img_3.png'; // Adjust the paths as needed
 
@@ -28,7 +28,7 @@ const AdBanner = () => {
                 Step into a world of engaging events that spark both personal growth and professional networking. From cultural soirées to educational workshops, each gathering is a step towards achieving your aspirations. Enrich your life with experiences that matter.
               </p>
               <div className="btn_wrap pb-0">
-                <Link to="/event" className="btn btn_primary"> {/* Replace with <a href="..."> if not using React Router */}
+                <Link to="/events" className="btn btn_primary"> {/* Replace with <a href="..."> if not using React Router */}
                   <span>
                     <small>Explore Events</small>
                     <small>Explore Events</small>
