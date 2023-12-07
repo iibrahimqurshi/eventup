@@ -220,7 +220,7 @@ function EventCard({events}) {
                   {event.description}
                 </p>
 
-                <Link className="btn_unfill" to={`/event_details:${event.ID}`}>
+                <Link className="btn_unfill" to={`/event_details/${event.ID}`}>
                   {" "}
                   
                   <span className="btn_text">View Event</span>

@@ -23,7 +23,7 @@ function EventInfoCard({event}) {
                 <div className="details_content">
                   <h3 className="details_info_title">Event Description</h3>
                   <p>
-                    Sagittis id consectetur purus ut faucibus pulvinar elementum integer. Sapien pellentesque habitant morbi tristique senectus et netus. Gravida in fermentum et sollicitudin ac orci phasellus egestas. Vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae. Massa sed elementum tempus egestas sed. Sed id semper risus in hendrerit gravida rutrum quisque.
+                    {event.description}
                   </p>
                 </div>
                 
@@ -38,8 +38,8 @@ function EventInfoCard({event}) {
                   <img src={eventImage} alt="Eventup" />
                 </div>
                 <div className="item_price">
-                    <span className="sale_price">150 SAR</span>
-                    <del className="remove_price">200 SAR</del>
+                    <span className="sale_price">{event.price} SAR</span>
+                    
                   </div>
                 <a href="#" className="btn btn_dark">
                     <span>
@@ -49,28 +49,30 @@ function EventInfoCard({event}) {
                   </a>
                   <ul className="event_info_list unordered_list_block">
                     <li>
-                      <span><i className="fas fa-user"></i> Created</span>
-                      <strong>Ibrahim alqurshi</strong>
+                      <span><i className="fas fa-user"></i> Created by</span>
+                      <strong> {event.organizer}</strong>
                     </li>
                     <li>
                       <span><i className="fas fa-users"></i> Available Space</span>
-                      <strong>40 Spaces</strong>
+                      <strong>{event.spaces} Spaces</strong>
                     </li>
                     <li>
                       <span><i className="fas fa-clock"></i> Time</span>
-                      <strong>8:00pm - 11:00pm</strong>
+                    <strong>{event.start_time} - {event.end_time} </strong>
                     </li>
                     <li>
                       <span><i className="fas fa-calendar"></i> Date</span>
-                      <strong>12/29/2023</strong>
+                    <strong>{event.date}</strong>
                     </li>
                     <li>
                       <span> <i className="fas fa-location"></i>Location</span>
-                      <span>7057 Cornishe, Hilton</span>
+
+                    <span style={{color:"black",textDecoration:"underline"}}> <a href={event.location}>Open in Google Maps</a></span>
+                    
                     </li>
                     <li>
                       <span> <i className="fas fa-city"></i> City</span>
-                      <span>Jeddah</span>
+                      <span>{event.city}</span>
                     </li>
                   </ul>
               </div>
