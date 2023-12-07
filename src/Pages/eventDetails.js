@@ -43,9 +43,7 @@ const EventDetails = () => {
       <main className="page_content">
          <EventDetailsBanner event={event} />
          <EventInfoCard event={event}/>
-        
       </main>
-
       <Footer />
     </div>
   );

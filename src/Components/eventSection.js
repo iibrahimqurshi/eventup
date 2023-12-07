@@ -158,7 +158,6 @@ const EventSection = () => {
 function EventCard({events}) {
   
   return (
-    
     <div className="tab-content">
       <div className="tab-pane fade show active" id="teb_all" role="tabpanel">
         <div className="row">
@@ -168,8 +167,7 @@ function EventCard({events}) {
             <div className="event_card">
               <div className="item_image">
                 <Link to={`/event_details:${event.ID}`}>
-                  {" "}
-                  {/* Replace with <a href="..."> if not using React Router */}
+                  
                   <img src={eventImage}  alt="Eventup" />
                 </Link>
               </div>
@@ -178,8 +176,8 @@ function EventCard({events}) {
                   <ul className="item_category_list unordered_list">
                     <li>
                       <Link to="#">{event.category}</Link>
-                    </li>{" "}
-                    {/* Replace with <a href="..."> if not using React Router */}
+                    </li>
+                   
                   </ul>
                   <div className="item_price">
                     <span className="sale_price">{event.price} SAR</span>
@@ -214,7 +212,7 @@ function EventCard({events}) {
 
                 <h3 className="item_title">
                   <Link to={`/event_details:${event.ID}`}>{event.title}</Link>{" "}
-                  {/* Replace with <a href="..."> if not using React Router */}
+                 
                   
                 </h3>
                 <h3 className="item_title">Event Description</h3>
@@ -224,7 +222,7 @@ function EventCard({events}) {
 
                 <Link className="btn_unfill" to={`/event_details:${event.ID}`}>
                   {" "}
-                  {/* Replace with <a href="..."> if not using React Router */}
+                  
                   <span className="btn_text">View Event</span>
                   <span className="btn_icon">
                     <i class="fas fa-long-arrow-right"></i>

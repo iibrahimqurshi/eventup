@@ -28,7 +28,7 @@ function App() {
 					<Route exact path='/signup' element={<SignupPage />} />
 					<Route exact path='/contact' element={<ContactPage/>}/>
 					<Route path="/event_details" element={<EventDetails/>}
-					><Route path=":ID" element={<EventDetails />} /></Route>
+					><Route path=":ID" element={<EventDetails/>} /></Route>
 					<Route exact path='/forget_password' element={<ForgetPasswordPage/>}/>
 				</Routes>
 			</Router>
