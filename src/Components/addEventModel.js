@@ -9,11 +9,9 @@ import "../App.css";
 import shapeImage from "../assets/images/shape/shape_img_7.png"; // Adjust the path as needed
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 
 function AddEventModal() {
-
   // event data
   const [eventData, setEventData] = useState({
     title: "",
@@ -27,93 +25,56 @@ function AddEventModal() {
     location: "",
     city: "",
     spaces: 0,
-    
   });
 
-  // This will hold the image file before upload
-  const [imageFile, setImageFile] = useState(null); 
-  
   // handle changes on inputs events data
   const handleChange = (e) => {
     setEventData({ ...eventData, [e.target.name]: e.target.value });
   };
 
-////////////////////////////////////////////////////////////////////////////////////
-  // handle file/image changes
-  // const handleImageChange = (e) => {
-  //   // Set the file to be uploaded
-  //   setImageFile(e.target.files[0]);
-  // };
-
-  // const handleImageUpload = async () => {
-  //   const formData = new FormData();
-  //   formData.append('image', imageFile); // Key 'image' is used by the PHP script
-
-  //   try {
-  //     const response = await axios.post('http://localhost/eventup/src/php/uploadImage.php', formData, {
-  //       headers: {
-  //         'Content-Type': 'multipart/form-data',
-  //       },
-  //     });
-  //     // Assuming the PHP script returns the image path in the response
-  //     return response.data.path;
-  //   } catch (error) {
-  //     console.error('Error uploading image:', error);
-  //   }
-  // };
-  //////////////////////////////////////////////////////////////////////////////
-
-
-
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
-  
-// submit all data with handling
+  // submit all data with handling
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // if (imageFile) {
-    //   const imagePath = await handleImageUpload();
-    //   setEventData({ ...eventData, image: imagePath }); // Update eventData with the image path
-    // }
 
-    ///////////////////////////
-    if(eventData.title.length === 0){
+    if (eventData.title.length === 0) {
       alert("Please Enter title");
-     }
-     else if(eventData.organizer.length === 0){
+    } else if (eventData.organizer.length === 0) {
       alert("Please enter Orgnaizer name");
-     }
-     else if(eventData.price === 0){
+    } else if (eventData.price === 0) {
       alert("Please enter a vaild price");
-     }
-     else if(eventData.category === "Category" ){
+    } else if (eventData.category === "Category") {
       alert("Please choose a Category");
-     }
-     else if(eventData.description.length === 0 && eventData.description.length < 3000){
-      alert("Please write a description for your Event , the description should consist of less than 3000 letters ");
-     }else if(eventData.date === '' ){
+    } else if (
+      eventData.description.length === 0 &&
+      eventData.description.length < 3000
+    ) {
+      alert(
+        "Please write a description for your Event , the description should consist of less than 3000 letters "
+      );
+    } else if (eventData.date === "") {
       alert("Please choose a Date");
-     }else if(eventData.start_time === ''){
+    } else if (eventData.start_time === "") {
       alert("Please choose a start time");
-     }else if(eventData.end_time === '' ){
+    } else if (eventData.end_time === "") {
       alert("Please choose a end time");
-     }else if(eventData.location.length === 0 ){
+    } else if (eventData.location.length === 0) {
       alert("Please Enter the location of the event");
-     }else if(eventData.city.length === 0 ){
+    } else if (eventData.city.length === 0) {
       alert("Please Enter the city name");
-     }else if(eventData.spaces === 0 ){
+    } else if (eventData.spaces === 0) {
       alert("Please choose a number of avaliable spaces");
-     }
-      else{
+    } else {
       try {
         const response = await axios.post(
           "http://localhost/eventup/src/php/post_event.php",
           eventData
         );
         console.log(response.data.message);
-        alert("Your Event have been added")
-        navigate('/')
+        alert("Your Event have been added");
+        navigate("/");
         setIsSubmitting(false);
       } catch (error) {
         console.error("Error submitting form:", error);
@@ -122,12 +83,8 @@ function AddEventModal() {
       }
     }
 
-
-
-
     /////////////////////////
     console.log(eventData);
-     
   };
 
   return (
@@ -137,20 +94,19 @@ function AddEventModal() {
           <div className="col col-lg-7">
             <div className="section_heading text-center">
               <h2 className="heading_text mb-0">
-               Your Paricpation is Our Success, Add Your Event and earn an audiance 
+                Your Paricpation is Our Success, Add Your Event and earn an
+                audiance
               </h2>
             </div>
           </div>
         </div>
 
         <form onSubmit={handleSubmit}>
-
           <div className="row justify-content-center">
             <div className="col col-lg-8">
               <div className="row">
                 <div className="col col-md-6">
                   <div className="form_item m-0">
-
                     {/* title */}
                     <label htmlFor="input_title" className="input_title">
                       Event Title
@@ -166,12 +122,11 @@ function AddEventModal() {
                   </div>
                 </div>
 
-
                 {/* Organizer */}
                 <div className="col col-md-6">
                   <div className="form_item m-0">
                     <label htmlFor="input_organizer" className="input_title">
-                    Organizer name
+                      Organizer name
                     </label>
                     <input
                       id="input_organizer"
@@ -184,11 +139,11 @@ function AddEventModal() {
                   </div>
                 </div>
 
-                {/* Price */} 
+                {/* Price */}
                 <div className="col col-md-6">
                   <div className="form_item m-0">
                     <label htmlFor="input_price" className="input_title">
-                    Price 
+                      Price
                     </label>
                     <input
                       id="input_price"
@@ -201,35 +156,36 @@ function AddEventModal() {
                   </div>
                 </div>
 
-
-                {/* Category */} 
+                {/* Category */}
                 <div className="col col-md-6">
                   <div className="form_item m-0">
                     <label htmlFor="input_category" className="input_title">
-                     Choose a Category
+                      Choose a Category
                     </label>
                     <select
                       name="category"
                       id="input_category"
                       value={eventData.category}
                       onChange={handleChange}
-                      
                     >
                       <option value="Category">Choose a Category</option>
                       <option value="ARTS & THEATRE">ARTS & THEATRE</option>
                       <option value="MUSIC & CONCERTS">MUSIC & CONCERTS</option>
-                      <option value="SPORTS & WELLNESS">SPORTS & WELLNESS</option>
-                      <option value="TECH & INNOVATION">TECH & INNOVATION</option>
-                      <option value="WORKSHOPS & EDUCATION">WORKSHOPS & EDUCATION</option>
+                      <option value="SPORTS & WELLNESS">
+                        SPORTS & WELLNESS
+                      </option>
+                      <option value="TECH & INNOVATION">
+                        TECH & INNOVATION
+                      </option>
+                      <option value="WORKSHOPS & EDUCATION">
+                        WORKSHOPS & EDUCATION
+                      </option>
                       <option value="SOCIAL GATHERING">SOCIAL GATHERING</option>
-                      
                     </select>
                   </div>
                 </div>
 
-
-
-               {/* Description */}
+                {/* Description */}
                 <div className="col">
                   <div className="form_item">
                     <label htmlFor="input_description" className="input_title">
@@ -245,8 +201,7 @@ function AddEventModal() {
                   </div>
                 </div>
 
-
-                {/* date*/} 
+                {/* date*/}
                 <div className="col ">
                   <div className="form_item">
                     <label htmlFor="input_date" className="input_title">
@@ -262,7 +217,7 @@ function AddEventModal() {
                   </div>
                 </div>
 
-                {/* start time */} 
+                {/* start time */}
                 <div className="col col-md-6">
                   <div className="form_item m-0">
                     <label htmlFor="input_start_time" className="input_title">
@@ -278,8 +233,7 @@ function AddEventModal() {
                   </div>
                 </div>
 
-
-                {/* end time */} 
+                {/* end time */}
                 <div className="col col-md-6">
                   <div className="form_item m-0">
                     <label htmlFor="input_end_time" className="input_title">
@@ -295,12 +249,11 @@ function AddEventModal() {
                   </div>
                 </div>
 
-
-                {/* Availavble spaces */} 
+                {/* Availavble spaces */}
                 <div className="col col-md-6">
                   <div className="form_item m-0">
                     <label htmlFor="input_spaces" className="input_title">
-                    Availavble spaces
+                      Availavble spaces
                     </label>
                     <input
                       id="input_spaces"
@@ -313,12 +266,11 @@ function AddEventModal() {
                   </div>
                 </div>
 
-
-                {/* City */} 
+                {/* City */}
                 <div className="col col-md-6">
                   <div className="form_item m-0">
                     <label htmlFor="input_city" className="input_title">
-                    City
+                      City
                     </label>
                     <input
                       id="input_city"
@@ -331,13 +283,11 @@ function AddEventModal() {
                   </div>
                 </div>
 
-
-
-                {/* location */} 
+                {/* location */}
                 <div className="col col-md-6">
                   <div className="form_item m-0">
                     <label htmlFor="input_location" className="input_title">
-                    Location url
+                      Location url
                     </label>
                     <input
                       id="input_location"
@@ -350,44 +300,15 @@ function AddEventModal() {
                   </div>
                 </div>
 
-
-
-                {/* Add upload image button that stores the image in the server and post it url to database */}
-
-                 {/* upload image 660X330 
-                 <div className="col col-md-6">
-                  <div className="form_item m-0">
-                    <label htmlFor="input_upload" className="input_title">
-                    Upload image
-                    </label>
-                    <input className="pt-3"
-                      id="input_upload"
-                      type="file"
-                      name="image"
-                      value={eventData.image}
-                      onChange={handleImageChange}
-                    />
-                  </div>
-                </div> */}
-
-                {/* add submit button  */}
-                <div className="col"> 
-                <button type="submit" className="btn btn_dark w-100" >
+                {/*submit button  */}
+                <div className="col">
+                  <button type="submit" className="btn btn_dark w-100">
                     <span>
                       <small>Add Event</small>
                       <small>Add Event</small>
                     </span>
                   </button>
-
                 </div>
-                
-
-
-
-
-
-
-
               </div>
             </div>
           </div>

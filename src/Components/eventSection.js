@@ -10,9 +10,9 @@ import axios from "axios";
 import eventImage from "../assets/images/event/event_details_image_1.png"; // Adjust path as needed
 
 const EventSection = () => {
-
   const [events, setEvents] = useState([]);
 
+// get events from database
   useEffect(() => {
     // Fetch the events data when the component mounts
     axios.get('http://localhost/eventup/src/php/get_events.php')
@@ -32,6 +32,9 @@ const EventSection = () => {
       <div className="container">
         <div className="section_heading">
           <div className="row align-items-center justify-content-lg-between">
+
+
+            
             <div className="col col-lg-6">
               <h2 className="heading_text mb-0">Top-Picked Events</h2>
             </div>

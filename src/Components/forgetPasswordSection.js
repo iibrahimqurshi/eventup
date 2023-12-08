@@ -1,3 +1,5 @@
+
+// forgetPasswordSectio.js
 import React, { useState } from "react";
 
 import axios from "axios";
@@ -44,7 +46,7 @@ function ForgetPasswordSection() {
     } else {
       try {
         const response = await axios.post(
-          "http://localhost/eventup/src/php/reset_password.php",
+          "http://localhost/eventup/src/php/rest_password.php",
           {
             email, // Email is already known
             newPassword, // New password entered by the user

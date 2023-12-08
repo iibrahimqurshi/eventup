@@ -30,7 +30,7 @@ const ExpectFromUs = () => {
             </div>
 
             <div className="image_widget">
-              <img src={bannerWhatToExpect} alt="Collab – Online Learning Platform" />
+              <img src={bannerWhatToExpect} alt="Eventup" />
             </div>
           </div>
           <div className="col col-lg-6">
@@ -47,7 +47,7 @@ const ExpectFromUs = () => {
               <div className="col col-md-6">
                 <div className="service_item">
                   <div className="item_icon">
-                    <img src={iconAcademicCap} alt="Collab – Online Learning Platform" />
+                    <img src={iconAcademicCap} alt="Eventup" />
                   </div>
                   <div className="item_content">
                     <h3 className="item_title">Diverse Events</h3>
@@ -61,7 +61,7 @@ const ExpectFromUs = () => {
               <div className="col col-md-6">
                 <div className="service_item">
                   <div className="item_icon">
-                    <img src={iconPhysics} alt="Collab – Online Learning Platform" />
+                    <img src={iconPhysics} alt="Eventup" />
                   </div>
                   <div className="item_content">
                     <h3 className="item_title">Easy Navigation</h3>
@@ -75,7 +75,7 @@ const ExpectFromUs = () => {
               <div className="col col-md-6">
                 <div className="service_item">
                   <div className="item_icon">
-                    <img src={iconCommunication} alt="Collab – Online Learning Platform" />
+                    <img src={iconCommunication} alt="Eventup" />
                   </div>
                   <div className="item_content">
                     <h3 className="item_title">Community Engagement</h3>
@@ -89,7 +89,7 @@ const ExpectFromUs = () => {
               <div className="col col-md-6">
                 <div className="service_item">
                   <div className="item_icon">
-                    <img src={iconDiploma} alt="Collab – Online Learning Platform" />
+                    <img src={iconDiploma} alt="Eventup" />
                   </div>
                   <div className="item_content">
                     <h3 className="item_title">Secure Bookings</h3>
