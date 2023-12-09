@@ -2,7 +2,7 @@ import React , {useContext , useState} from "react";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom for internal navigation
 import "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../css/style.css";
+
 import "../css/animate.css";
 import "../css/fontawesome.css";
 import "../App.css";
@@ -12,11 +12,11 @@ const Header = () => {
   const { isLoggedIn, logout } = useContext(AuthContext);
 
   return (
-    <header className="app_header ">
+    <header className="app_header sticky">
       <div className="container">
         {/* Logo */}
         <div className="row align-items-center">
-          <div className="col col-lg-3 col-5">
+          <div className="col col-lg-2 col-5 p-9">
             <div className="site_logo">
               <Link className="site_link" to="/">
                 <img src={logo} alt="Eventup" />
@@ -27,7 +27,7 @@ const Header = () => {
           
 
           {/* Menu */}
-          <div className="col col-lg-6 col-2">
+          <div className="col col-lg-7 col-2 pl-5">
             <nav className="main_menu navbar navbar-expand-lg">
               <div
                 className="main_menu_inner collapse navbar-collapse justify-content-center"

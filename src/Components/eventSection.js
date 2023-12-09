@@ -2,7 +2,7 @@ import React ,{useState , useEffect}from "react";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom for internal navigation
 import "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../css/style.css";
+
 import "../css/animate.css";
 import "../css/fontawesome.css";
 import "../App.css";
@@ -169,7 +169,7 @@ function EventCard({events}) {
           <div key={event.ID} className="col col-lg-4">
             <div className="event_card">
               <div className="item_image">
-                <Link to={`/event_details:${event.ID}`}>
+                <Link to={`/event_details/${event.ID}`}>
                   
                   <img src={eventImage}  alt="Eventup" />
                 </Link>
@@ -214,7 +214,7 @@ function EventCard({events}) {
                 </ul>
 
                 <h3 className="item_title">
-                  <Link to={`/event_details:${event.ID}`}>{event.title}</Link>{" "}
+                  <Link to={`/event_details/${event.ID}`}>{event.title}</Link>{" "}
                  
                   
                 </h3>

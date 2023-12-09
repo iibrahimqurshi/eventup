@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom for internal navigation
 import "react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "../css/style.css"
+
 import "../css/animate.css"
 import "../css/fontawesome.css"
 import "../App.css"
@@ -38,7 +38,7 @@ const AdBanner = () => {
             </div>
           </div>
           <div className="col col-lg-6">
-            <div className="row images_group decoration_wra">
+            <div className="row images_group decoration_wrap">
               <div className="col col-md-6 col-sm-6">
                 <div className="image_wrap">
                   <img src={adImage1} alt="Eventup" />

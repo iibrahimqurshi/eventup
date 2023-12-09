@@ -6,7 +6,7 @@ import Footer from "../Components/footer";
 import PageBanner from "../Components/pageBanner";
 import "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../css/style.css";
+
 import "../css/animate.css";
 import "../css/fontawesome.css";
 import "../App.css";
@@ -19,7 +19,7 @@ const ContactPage = () => {
   return (
     <div className="page_wrapper">
       <Header />
-      <div className="section_space_lg m-5"> </div>
+      <div className="section_space_lg m-1"> </div>
       <PageBanner pageTitle={title} pageDescription={contactDescription} />
       <ContactSection />
       <ContactForm />

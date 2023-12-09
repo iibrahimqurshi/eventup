@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Route } from "react-router-dom"; // Import Link from react-router-dom for internal navigation
 import "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../css/style.css";
+
 import "../css/animate.css";
 import "../css/fontawesome.css";
 import "../App.css";

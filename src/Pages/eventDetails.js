@@ -4,7 +4,7 @@ import Footer from "../Components/footer";
 import EventDetailsBanner from "../Components/eventDetailsBanner";
 import "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../css/style.css";
+
 import "../css/animate.css";
 import "../css/fontawesome.css";
 import "../App.css";
@@ -31,10 +31,11 @@ const EventDetails = () => {
         }
       })
       .catch((error) => console.error("Error fetching event details:", error));
-  }, [eventId]);
+  },[eventId]);
 
   return (
     event && (
+      <>
       <div className="page_wrapper">
         <Header />
         <div className="section_space_lg m-5"> </div>
@@ -45,6 +46,7 @@ const EventDetails = () => {
         </main>
         <Footer />
       </div>
+      </>
     )
   );
 };

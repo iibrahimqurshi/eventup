@@ -3,7 +3,7 @@ import { Link , useNavigate} from "react-router-dom"; // Import only if using Re
 import eventImage from "../assets/images/event/event_details_image_1.png"; 
 import "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../css/style.css";
+
 import "../css/animate.css";
 import "../css/fontawesome.css";
 import "../App.css";

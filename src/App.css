@@ -1496,10 +1496,12 @@ ol[type="1"] > li:not(:last-child) {
 ================================================== */
 .newslatter_section {
   background-image: linear-gradient(0deg, #1F1D0D 120px, transparent 0);
+
 }
 
 .newslatter_box {
   z-index: 1;
+  
   position: relative;
   padding: 110px 30px;
   background-size: cover;
@@ -1545,13 +1547,14 @@ ol[type="1"] > li:not(:last-child) {
   left: 0;
   right: 0;
   z-index: 99;
-  padding: 44px 0;
+  padding: 5px 0;
   position: absolute;
   -webkit-transition: padding 0.3s;
   transition: padding 0.3s;
 }
 .app_header .container {
   max-width: 1430px;
+  max-height: 150px;
 }
 .app_header.sticky {
   padding: 10px 0;

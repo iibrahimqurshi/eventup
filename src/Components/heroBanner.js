@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom for internal navigation
 import "react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "../css/style.css"
+
 import "../css/animate.css"
 import "../css/fontawesome.css"
 import "../App.css"
@@ -29,7 +29,7 @@ const HeroBanner = () => {
                 </p>
                 <ul className="banner_btns_group unordered_list">
                   <li>
-                    <Link to="/event" className="btn btn_primary"> {/* Change to <a href="..."> if not using React Router */}
+                    <Link to="/events" className="btn btn_primary"> {/* Change to <a href="..."> if not using React Router */}
                       <span>
                         <small>Explore Events</small>
                         <small>Explore Events</small>

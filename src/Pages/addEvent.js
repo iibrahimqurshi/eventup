@@ -6,7 +6,7 @@ import Footer from "../Components/footer";
 import PageBanner from "../Components/pageBanner";
 import "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../css/style.css";
+
 import "../css/animate.css";
 import "../css/fontawesome.css";
 import "../App.css";

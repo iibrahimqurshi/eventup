@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom for internal navigation
 import "react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "../css/style.css"
+
 import "../css/animate.css"
 import "../css/fontawesome.css"
 import "../App.css"
@@ -38,8 +38,8 @@ const ContactSection = () => {
                 </div>
                 <div className="item_content">
                   <h3 className="item_title">Email Address</h3>
-                  <p className="mb-0">info-collab@example.com</p>
-                  <p className="mb-0">collab-support@example.com</p>
+                  <p className="mb-0">info@eventup.com</p>
+                  <p className="mb-0">eventup-support@eventup.com</p>
                 </div>
               </div>
               <div className="iconbox_item contact_info_iconbox">
@@ -48,8 +48,8 @@ const ContactSection = () => {
                 </div>
                 <div className="item_content">
                   <h3 className="item_title">Reach Us</h3>
-                  <p className="mb-0">31 Sunset Road, Gales Ferry,</p>
-                  <p className="mb-0">6335 United States</p>
+                  <p className="mb-0">King abdulaziz university</p>
+                  <p className="mb-0">Jeddah Saudi Arabia</p>
                 </div>
               </div>
             </div>

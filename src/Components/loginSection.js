@@ -2,7 +2,7 @@ import React, { useState ,useContext} from 'react';
 import { Link,useNavigate } from 'react-router-dom'; // Import only if using React Router
 import "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../css/style.css";
+
 import "../css/animate.css";
 import "../css/fontawesome.css";
 import "../App.css";

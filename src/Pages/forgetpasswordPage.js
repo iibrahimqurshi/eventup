@@ -3,7 +3,7 @@ import Footer from "../Components/footer"
 import ForgetPasswordSection from "../Components/forgetPasswordSection"
 import "react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "../css/style.css"
+
 import "../css/animate.css"
 import "../css/fontawesome.css"
 import "../App.css"

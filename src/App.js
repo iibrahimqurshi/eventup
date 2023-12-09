@@ -11,6 +11,7 @@ import ForgetPasswordPage from './Pages/forgetpasswordPage.js';
 import { AuthProvider } from './Components/AuthContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./css/style.css"
+import "./App.css"
 import "./css/animate.css"
 import "./css/fontawesome.css"
 import AddEventModal from './Pages/addEvent.js'

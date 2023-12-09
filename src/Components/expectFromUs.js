@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom for internal navigation
 import "react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "../css/style.css"
+
 import "../css/animate.css"
 import "../css/fontawesome.css"
 import "../App.css"
@@ -35,7 +35,7 @@ const ExpectFromUs = () => {
           </div>
           <div className="col col-lg-6">
             <div className="btn_wrap pt-0 d-none d-lg-flex justify-content-end">
-              <Link to="/event" className="btn border_dark">
+              <Link to="/events" className="btn border_dark">
                 <span>
                   <small>Explore Events</small>
                   <small>Explore Events</small>
